@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function AddTaskForm({onAddTask}){
 
     const[task, setTask] = useState("");
-    const[category, setCategory] = useState("daily");
+    const[category_id, setCategory_id] = useState("1");
 
     function handleSubmit(e){
         e.preventDefault()
@@ -21,7 +21,7 @@ function AddTaskForm({onAddTask}){
             },
             body: JSON.stringify({
                 task: task,
-                category: category,
+                category_id: parseInt(category_id),
                 isDone: false
             })
         })
@@ -51,13 +51,13 @@ function AddTaskForm({onAddTask}){
                     Category:
                     <select
                         name="category"
-                        value={category}
-                        onChange={(e)=> setCategory(e.target.value)}
+                        value={category_id}
+                        onChange={(e)=> setCategory_id(e.target.value)}
                     >
-                        <option value="daily">Daily chores and Routines</option>
-                        <option value="finances">Career Prosperity and Financial Freedom</option>    
-                        <option value="people">Strong Family ties, healthy friendships and relationships</option>    
-                        <option value="mind-care">Mind Care, Self Growth and Development</option>    
+                        <option value="1">Daily chores and Routines</option>
+                        <option value="3">Career Prosperity and Financial Freedom</option>    
+                        <option value="4">Strong Family ties, healthy friendships and relationships</option>    
+                        <option value="2">Mind Care, Self Growth and Development</option>    
                     </select>    
                 </label><br></br>
 
