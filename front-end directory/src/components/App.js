@@ -72,10 +72,7 @@ function App (){
         </Route>
 
         <Route exact path="/mind-care">
-          <MindCare 
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask} 
-          />
+          <MindCare />
         </Route>
 
         <Route exact path="/social-life">

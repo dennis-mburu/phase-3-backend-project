@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect, useState } from "react";
 import Tasks from "./Tasks"
 
-function MindCare ({ onUpdateTask, onDeleteTask}){
+function MindCare (){
 
     const [mindTasks, setmindTasks] = useState([])
 
@@ -17,6 +17,23 @@ function MindCare ({ onUpdateTask, onDeleteTask}){
         })
       },[])
 
+      function handleUpdateTask(updatedItem) {
+        const updatedItems = mindTasks.map((item) => {
+          if(item.id === updatedItem.id){
+            return updatedItem;
+          }
+          return item;
+        })
+        setmindTasks(updatedItems)
+      }
+    
+      
+      function handleDeletedTask(id){
+        const updatedItems = mindTasks.filter(item => item.id !== id)
+        setmindTasks(updatedItems)
+        console.log(updatedItems)
+      }
+
 
     return (
         <div>
@@ -27,8 +44,8 @@ function MindCare ({ onUpdateTask, onDeleteTask}){
             </div>
             <ul className="Items">{mindTasks.map(item => <Tasks 
             key={item.id}
-            onUpdateTask={onUpdateTask}
-            onDeleteTask={onDeleteTask}
+            onUpdateTask={handleUpdateTask}
+            onDeleteTask={handleDeletedTask}
             item={item}/>)}
             </ul>
         </div>
