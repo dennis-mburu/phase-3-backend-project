@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from "react";
 import AllTasks from "./AllTasks";
 import Home from "./Home";
 import NavBar from "./NavBar";
@@ -9,6 +8,8 @@ import Daily from "./Daily";
 import Finances from "./Finances";
 import MindCare from "./MindCare";
 import SocialLife from "./SocialLife";
+import React, {useState, useEffect} from "react";
+
 
 
 function App (){
@@ -54,11 +55,7 @@ function App (){
         </Route>
 
         <Route exact path="/all-tasks">
-          <AllTasks 
-          allTodos={todos} 
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask}  
-          />
+          <AllTasks />
         </Route>
 
         <Route exact path="/add-task">
