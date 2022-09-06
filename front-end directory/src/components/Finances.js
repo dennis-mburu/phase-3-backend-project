@@ -3,7 +3,7 @@ import Tasks from "./Tasks";
 import { useEffect, useState } from "react";
 
 
-function Finances ({onUpdateTask, onDeleteTask}) {
+function Finances () {
 
     const [workTasks, setworkTasks] = useState([])
 
@@ -18,6 +18,22 @@ function Finances ({onUpdateTask, onDeleteTask}) {
         })
       },[])
 
+      function handleUpdateTask(updatedItem) {
+        const updatedItems = workTasks.map((item) => {
+          if(item.id === updatedItem.id){
+            return updatedItem;
+          }
+          return item;
+        })
+        setworkTasks(updatedItems)
+      }
+
+      function handleDeletedTask(id){
+        const updatedItems = workTasks.filter(item => item.id !== id)
+        setworkTasks(updatedItems)
+        console.log(updatedItems)
+      }  
+
     return (
         <div >
             <div className="Container">
@@ -26,8 +42,8 @@ function Finances ({onUpdateTask, onDeleteTask}) {
             </div>
             <ul className="Items">{workTasks.map(item => <Tasks 
             key={item.id}
-            onUpdateTask={onUpdateTask}
-            onDeleteTask={onDeleteTask}
+            onUpdateTask={handleUpdateTask}
+            onDeleteTask={handleDeletedTask}
             item={item}/>)}
             </ul>
         </div>
