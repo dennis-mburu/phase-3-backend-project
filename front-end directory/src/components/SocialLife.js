@@ -1,9 +1,25 @@
 import React from "react";
 import Tasks from "./Tasks";
+import { useEffect, useState } from "react";
+
 
 function SocialLife({allTodos, onUpdateTask, onDeleteTask}){
 
-    const socialTodos = allTodos.filter(item => item.category === "people")
+    // const socialTodos = allTodos.filter(item => item.category === "people")
+
+
+    const [socialTodos, set_social_todos] = useState([])
+
+
+    useEffect(() => {
+    
+        fetch("http://localhost:9292/people")
+    
+        .then(res => res.json())
+        .then(data => {
+            set_social_todos(data)
+        })
+      },[])
 
     return (
         <div>

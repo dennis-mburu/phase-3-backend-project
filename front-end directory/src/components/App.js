@@ -16,15 +16,7 @@ function App (){
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    
-    // fetch("http://localhost:4000/todos")
-
-    // to switch to development mode, uncomment the line above and comment 
-    // out the next line below, and vice Versa applies to switch from 
-    // production to development.
-    
-    
-    // fetch("https://ancient-depths-93551.herokuapp.com/todos")
+ 
     fetch("http://localhost:9292/all-tasks")
 
     .then(res => res.json())
@@ -33,25 +25,25 @@ function App (){
     })
   },[])
   
-  function handleUpdateTask(updatedItem) {
-    const updatedItems = todos.map((item) => {
-      if(item.id === updatedItem.id){
-        return updatedItem;
-      }
-      return item;
-    })
-    setTodos(updatedItems)
-  }
+  // function handleUpdateTask(updatedItem) {
+  //   const updatedItems = todos.map((item) => {
+  //     if(item.id === updatedItem.id){
+  //       return updatedItem;
+  //     }
+  //     return item;
+  //   })
+  //   setTodos(updatedItems)
+  // }
 
-  function handleAddTask(newTask){
-    setTodos([...todos, newTask])
-  }
+  // function handleAddTask(newTask){
+  //   setTodos([...todos, newTask])
+  // }
   
-  function handleDeletedTask(id){
-    const updatedItems = todos.filter(item => item.id !== id)
-    setTodos(updatedItems)
-    console.log(updatedItems)
-  }
+  // function handleDeletedTask(id){
+  //   const updatedItems = todos.filter(item => item.id !== id)
+  //   setTodos(updatedItems)
+  //   console.log(updatedItems)
+  // }
 
   
   return (
@@ -64,40 +56,47 @@ function App (){
 
         <Route exact path="/all-tasks">
           <AllTasks allTodos={todos} 
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask}  />
+          // onUpdateTask={handleUpdateTask}
+          // onDeleteTask={handleDeletedTask}  
+          />
         </Route>
 
         <Route exact path="/add-task">
-          <AddTaskForm onAddTask={handleAddTask}/>
+          <AddTaskForm 
+          // onAddTask={handleAddTask}
+          />
         </Route>
 
         <Route exact path="/daily">
           <Daily 
-          allTodos={todos}
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask} />
+          // allTodos={todos}
+          // onUpdateTask={handleUpdateTask}
+          // onDeleteTask={handleDeletedTask} 
+          />
         </Route>
 
         <Route exact path="/finances">
           <Finances 
-          allTodos={todos}
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask} />
+          // allTodos={todos}
+          // onUpdateTask={handleUpdateTask}
+          // onDeleteTask={handleDeletedTask} 
+          />
         </Route>
 
         <Route exact path="/mind-care">
           <MindCare 
-          allTodos={todos}
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask} />
+          // allTodos={todos}
+          // onUpdateTask={handleUpdateTask}
+          // onDeleteTask={handleDeletedTask} 
+          />
         </Route>
 
         <Route exact path="/social-life">
           <SocialLife
-          allTodos={todos}
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask} />
+          // allTodos={todos}
+          // onUpdateTask={handleUpdateTask}
+          // onDeleteTask={handleDeletedTask} 
+          />
         </Route>
 
       </Switch>

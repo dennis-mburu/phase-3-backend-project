@@ -5,16 +5,9 @@ function Tasks ({item,  onUpdateTask, onDeleteTask}){
   const {task, category, isDone, id} = item
 
     function handleDoneStatus(){
-        // fetch(`http://localhost:4000/todos/${id}`, {
 
-    // to switch to development mode, uncomment the line above and comment 
-    // out the next line below, and vice Versa applies to switch from 
-    // production to development.
-
-        // fetch(`https://ancient-depths-93551.herokuapp.com/todos/${id}`, {
         fetch(`http://localhost:9292/all-tasks/${id}`, {
 
-        // fetch("http://localhost:9292/all-tasks/${id}", {
 
             method: "PATCH",
             headers: {
@@ -29,13 +22,7 @@ function Tasks ({item,  onUpdateTask, onDeleteTask}){
     }
 
     function handleDeleteClick(){
-      // fetch(`http://localhost:4000/todos/${id}`, {
 
-    // to switch to development mode, uncomment the line above and comment 
-    // out the next line below, and vice Versa applies to switch from 
-    // production to development.
-
-      // fetch(`https://ancient-depths-93551.herokuapp.com/todos/${id}`, {
       fetch(`http://localhost:9292/all-tasks/${id}`, {
 
         method: "DELETE"

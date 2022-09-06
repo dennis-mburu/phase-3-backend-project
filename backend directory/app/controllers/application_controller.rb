@@ -16,6 +16,21 @@ class ApplicationController < Sinatra::Base
     daily_tasks.to_json
   end
 
+  get "/mind-care" do
+    mind_tasks = Task.where(category_id: 2)
+    mind_tasks.to_json
+  end
+  
+  get "/finances" do
+    finance_tasks = Task.where(category_id: 3)
+    finance_tasks.to_json
+  end
+
+  get "/people" do
+    people_tasks = Task.where(category_id: 4)
+    people_tasks.to_json
+  end
+
   patch "/all-tasks/:id" do
     patch_it = Task.find(params[:id])
     patch_it.update(
@@ -26,10 +41,6 @@ class ApplicationController < Sinatra::Base
     patch_it.to_json
   end
 
-  get "/all-tasks/:id" do
-    task = Task.find(params[:id])
-    task.to_json
-  end
 
   delete "/all-tasks/:id" do
     deleted = Task.find(params[:id])

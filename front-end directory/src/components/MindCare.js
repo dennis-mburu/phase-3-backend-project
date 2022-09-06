@@ -1,9 +1,23 @@
 import React from "react"
+import { useEffect, useState } from "react";
 import Tasks from "./Tasks"
 
 function MindCare ({allTodos, onUpdateTask, onDeleteTask}){
 
-    const mindTasks = allTodos.filter(item => item.category === "mind-care")
+    // const mindTasks = allTodos.filter(item => item.category === "mind-care")
+
+    const [mindTasks, setmindTasks] = useState([])
+
+
+    useEffect(() => {
+    
+        fetch("http://localhost:9292/mind-care")
+    
+        .then(res => res.json())
+        .then(data => {
+            setmindTasks(data)
+        })
+      },[])
 
 
     return (

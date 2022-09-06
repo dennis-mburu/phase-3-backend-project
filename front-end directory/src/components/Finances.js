@@ -1,9 +1,25 @@
 import React from "react";
 import Tasks from "./Tasks";
+import { useEffect, useState } from "react";
+
 
 function Finances ({allTodos, onUpdateTask, onDeleteTask}) {
 
-    const workTasks = allTodos.filter(item => item.category === "finances")
+    // const workTasks = allTodos.filter(item => item.category === "finances")
+
+
+    const [workTasks, setworkTasks] = useState([])
+
+
+    useEffect(() => {
+    
+        fetch("http://localhost:9292/finances")
+    
+        .then(res => res.json())
+        .then(data => {
+            setworkTasks(data)
+        })
+      },[])
 
     return (
         <div >
