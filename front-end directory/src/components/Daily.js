@@ -18,6 +18,17 @@ function Daily({ onUpdateTask, onDeleteTask}){
         })
       },[])
 
+
+      function handleUpdateTask(updatedItem) {
+        const updatedItems = dailyTodos.map((item) => {
+          if(item.id === updatedItem.id){
+            return updatedItem;
+          }
+          return item;
+        })
+        setdaily_todos(updatedItems)
+      }
+
     return (
         <div >
             <div className="Container">
@@ -28,7 +39,7 @@ function Daily({ onUpdateTask, onDeleteTask}){
 
             <ul className="Items">{dailyTodos.map(item => <Tasks 
             key={item.id}
-            onUpdateTask={onUpdateTask}
+            onUpdateTask={handleUpdateTask}
             onDeleteTask={onDeleteTask}
             item={item}/>)}
             </ul>

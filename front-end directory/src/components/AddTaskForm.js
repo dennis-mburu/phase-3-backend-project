@@ -8,13 +8,6 @@ function AddTaskForm({onAddTask}){
     function handleSubmit(e){
         e.preventDefault()
 
-        // fetch("http://localhost:4000/todos", {
-
-        // to switch to development mode, uncomment the line above and comment 
-        // out the next line below, and vice Versa applies to switch from 
-        // production to development.
-
-        // fetch("https://ancient-depths-93551.herokuapp.com/todos", {
         fetch("http://localhost:9292/all-tasks", {
 
             method: "POST",
