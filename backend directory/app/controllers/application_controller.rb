@@ -11,4 +11,11 @@ class ApplicationController < Sinatra::Base
     all_tasks.to_json
   end
 
+  get "/daily" do
+    daily_tasks = Task.where(category_id: 1)
+    daily_tasks.to_json
+  end
+
+  # get ""
+
 end
