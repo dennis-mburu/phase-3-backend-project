@@ -10,6 +10,8 @@ Task.create(task: "take regular breaks from work", category_id: 2)
 Task.create(task: "Plan a get-together with the Mburu's family in 2 weeks time", category_id: 4)
 Task.create(task: "Invest 15k in CMMF by this end Month", category_id: 3)
 Task.create(task: "Call Jim tomorrow night", category_id: 4)
+Task.create(task: "read ruby", category_id: 2, isDone: true)
+
 
 
 Category.create(name: "daily")

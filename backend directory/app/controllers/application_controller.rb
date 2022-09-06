@@ -16,6 +16,24 @@ class ApplicationController < Sinatra::Base
     daily_tasks.to_json
   end
 
-  # get ""
+  patch "/all-tasks/:id" do
+    patch_it = Task.find(params[:id])
+    patch_it.update(
+      # task: params[:task],
+      isDone: params[:isDone],
+      # category_id: params[:category_id]
+    )
+    patch_it.to_json
+  end
 
+  get "/all-tasks/:id" do
+    task = Task.find(params[:id])
+    task.to_json
+  end
+
+  delete "/all-tasks/:id" do
+    deleted = Task.find(params[:id])
+    deleted.destroy
+    deleted.to_json
+  end
 end

@@ -11,7 +11,11 @@ function Tasks ({item,  onUpdateTask, onDeleteTask}){
     // out the next line below, and vice Versa applies to switch from 
     // production to development.
 
-        fetch(`https://ancient-depths-93551.herokuapp.com/todos/${id}`, {
+        // fetch(`https://ancient-depths-93551.herokuapp.com/todos/${id}`, {
+        fetch(`http://localhost:9292/all-tasks/${id}`, {
+
+        // fetch("http://localhost:9292/all-tasks/${id}", {
+
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",
@@ -31,7 +35,9 @@ function Tasks ({item,  onUpdateTask, onDeleteTask}){
     // out the next line below, and vice Versa applies to switch from 
     // production to development.
 
-      fetch(`https://ancient-depths-93551.herokuapp.com/todos/${id}`, {
+      // fetch(`https://ancient-depths-93551.herokuapp.com/todos/${id}`, {
+      fetch(`http://localhost:9292/all-tasks/${id}`, {
+
         method: "DELETE"
       })
       .then(res => res.json())
