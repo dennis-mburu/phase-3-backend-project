@@ -24,7 +24,9 @@ function App (){
     // production to development.
     
     
-    fetch("https://ancient-depths-93551.herokuapp.com/todos")
+    // fetch("https://ancient-depths-93551.herokuapp.com/todos")
+    fetch("http://localhost:9292/all-tasks")
+
     .then(res => res.json())
     .then(data => {
       setTodos(data)
