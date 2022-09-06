@@ -1,9 +1,25 @@
 import React from "react";
 import Tasks from "./Tasks";
+import { useEffect, useState } from "react";
+
 
 function Daily({allTodos, onUpdateTask, onDeleteTask}){
     
-    const dailyTodos = allTodos.filter(item => item.category === "daily")
+    // const dailyTodos = allTodos.filter(item => item.category === "daily")
+
+
+    const [dailyTodos, setdaily_todos] = useState([])
+
+
+    useEffect(() => {
+    
+        fetch("http://localhost:9292/daily")
+    
+        .then(res => res.json())
+        .then(data => {
+          setdaily_todos(data)
+        })
+      },[])
 
     return (
         <div >
