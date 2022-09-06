@@ -36,4 +36,13 @@ class ApplicationController < Sinatra::Base
     deleted.destroy
     deleted.to_json
   end
+
+  post "/all-tasks" do
+    new_task = Task.create(
+      task: params[:task],
+      category_id: params[:category_id],
+      isDone: params[:isDone]
+    )
+    new_task.to_json
+  end
 end
