@@ -2,9 +2,7 @@ import React from "react"
 import { useEffect, useState } from "react";
 import Tasks from "./Tasks"
 
-function MindCare ({allTodos, onUpdateTask, onDeleteTask}){
-
-    // const mindTasks = allTodos.filter(item => item.category === "mind-care")
+function MindCare ({ onUpdateTask, onDeleteTask}){
 
     const [mindTasks, setmindTasks] = useState([])
 

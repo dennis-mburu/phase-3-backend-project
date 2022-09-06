@@ -2,8 +2,6 @@ import Tasks from "./Tasks";
 
 function AllTasks({allTodos,  onUpdateTask, onDeleteTask}){
 
-
-
     return(
         <div className="Container">
             <h4><em>ALL</em> Your Tasks, reminders, routines and goals will be displayed Here: </h4>

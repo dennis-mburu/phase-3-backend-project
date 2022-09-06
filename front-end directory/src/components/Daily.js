@@ -3,11 +3,8 @@ import Tasks from "./Tasks";
 import { useEffect, useState } from "react";
 
 
-function Daily({allTodos, onUpdateTask, onDeleteTask}){
+function Daily({ onUpdateTask, onDeleteTask}){
     
-    // const dailyTodos = allTodos.filter(item => item.category === "daily")
-
-
     const [dailyTodos, setdaily_todos] = useState([])
 
 

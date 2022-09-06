@@ -24,26 +24,25 @@ function App (){
       setTodos(data)
     })
   },[])
-  
-  // function handleUpdateTask(updatedItem) {
-  //   const updatedItems = todos.map((item) => {
-  //     if(item.id === updatedItem.id){
-  //       return updatedItem;
-  //     }
-  //     return item;
-  //   })
-  //   setTodos(updatedItems)
-  // }
 
-  // function handleAddTask(newTask){
-  //   setTodos([...todos, newTask])
-  // }
   
-  // function handleDeletedTask(id){
-  //   const updatedItems = todos.filter(item => item.id !== id)
-  //   setTodos(updatedItems)
-  //   console.log(updatedItems)
-  // }
+  
+  function handleUpdateTask(updatedItem) {
+    const updatedItems = todos.map((item) => {
+      if(item.id === updatedItem.id){
+        return updatedItem;
+      }
+      return item;
+    })
+    setTodos(updatedItems)
+  }
+
+  
+  function handleDeletedTask(id){
+    const updatedItems = todos.filter(item => item.id !== id)
+    setTodos(updatedItems)
+    console.log(updatedItems)
+  }
 
   
   return (
@@ -55,47 +54,43 @@ function App (){
         </Route>
 
         <Route exact path="/all-tasks">
-          <AllTasks allTodos={todos} 
-          // onUpdateTask={handleUpdateTask}
-          // onDeleteTask={handleDeletedTask}  
+          <AllTasks 
+          allTodos={todos} 
+          onUpdateTask={handleUpdateTask}
+          onDeleteTask={handleDeletedTask}  
           />
         </Route>
 
         <Route exact path="/add-task">
           <AddTaskForm 
-          // onAddTask={handleAddTask}
           />
         </Route>
 
         <Route exact path="/daily">
           <Daily 
-          // allTodos={todos}
-          // onUpdateTask={handleUpdateTask}
-          // onDeleteTask={handleDeletedTask} 
+          onUpdateTask={handleUpdateTask}
+          onDeleteTask={handleDeletedTask} 
           />
         </Route>
 
         <Route exact path="/finances">
           <Finances 
-          // allTodos={todos}
-          // onUpdateTask={handleUpdateTask}
-          // onDeleteTask={handleDeletedTask} 
+          onUpdateTask={handleUpdateTask}
+          onDeleteTask={handleDeletedTask} 
           />
         </Route>
 
         <Route exact path="/mind-care">
           <MindCare 
-          // allTodos={todos}
-          // onUpdateTask={handleUpdateTask}
-          // onDeleteTask={handleDeletedTask} 
+          onUpdateTask={handleUpdateTask}
+          onDeleteTask={handleDeletedTask} 
           />
         </Route>
 
         <Route exact path="/social-life">
           <SocialLife
-          // allTodos={todos}
-          // onUpdateTask={handleUpdateTask}
-          // onDeleteTask={handleDeletedTask} 
+          onUpdateTask={handleUpdateTask}
+          onDeleteTask={handleDeletedTask} 
           />
         </Route>
 

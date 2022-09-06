@@ -3,10 +3,7 @@ import Tasks from "./Tasks";
 import { useEffect, useState } from "react";
 
 
-function SocialLife({allTodos, onUpdateTask, onDeleteTask}){
-
-    // const socialTodos = allTodos.filter(item => item.category === "people")
-
+function SocialLife({onUpdateTask, onDeleteTask}){
 
     const [socialTodos, set_social_todos] = useState([])
 

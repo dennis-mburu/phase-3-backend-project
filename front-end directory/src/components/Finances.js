@@ -3,10 +3,7 @@ import Tasks from "./Tasks";
 import { useEffect, useState } from "react";
 
 
-function Finances ({allTodos, onUpdateTask, onDeleteTask}) {
-
-    // const workTasks = allTodos.filter(item => item.category === "finances")
-
+function Finances ({onUpdateTask, onDeleteTask}) {
 
     const [workTasks, setworkTasks] = useState([])
 
