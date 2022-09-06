@@ -67,10 +67,7 @@ function App (){
         </Route>
 
         <Route exact path="/daily">
-          <Daily 
-          onUpdateTask={handleUpdateTask}
-          onDeleteTask={handleDeletedTask} 
-          />
+          <Daily />
         </Route>
 
         <Route exact path="/finances">

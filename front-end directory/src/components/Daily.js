@@ -3,7 +3,7 @@ import Tasks from "./Tasks";
 import { useEffect, useState } from "react";
 
 
-function Daily({ onUpdateTask, onDeleteTask}){
+function Daily(){
     
     const [dailyTodos, setdaily_todos] = useState([])
 
@@ -29,6 +29,12 @@ function Daily({ onUpdateTask, onDeleteTask}){
         setdaily_todos(updatedItems)
       }
 
+      function handleDeletedTask(id){
+        const updatedItems = dailyTodos.filter(item => item.id !== id)
+        setdaily_todos(updatedItems)
+        console.log(updatedItems)
+      }
+
     return (
         <div >
             <div className="Container">
@@ -40,7 +46,7 @@ function Daily({ onUpdateTask, onDeleteTask}){
             <ul className="Items">{dailyTodos.map(item => <Tasks 
             key={item.id}
             onUpdateTask={handleUpdateTask}
-            onDeleteTask={onDeleteTask}
+            onDeleteTask={handleDeletedTask}
             item={item}/>)}
             </ul>
         </div>
