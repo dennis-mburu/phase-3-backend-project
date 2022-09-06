@@ -5,7 +5,8 @@
   --yellow: rgb(237, 237, 32);
   --font-color: rgb(33, 33, 33);
   --font-color-light: rgb(155, 155, 155);
-  --background: aqua; 
+  /* --background: aqua;  */
+  --background: orange; 
   --background-light: rgb(230, 230, 230);
 }
 
