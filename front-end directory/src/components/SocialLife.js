@@ -3,7 +3,7 @@ import Tasks from "./Tasks";
 import { useEffect, useState } from "react";
 
 
-function SocialLife({onUpdateTask, onDeleteTask}){
+function SocialLife(){
 
     const [socialTodos, set_social_todos] = useState([])
 
@@ -18,6 +18,23 @@ function SocialLife({onUpdateTask, onDeleteTask}){
         })
       },[])
 
+      function handleUpdateTask(updatedItem) {
+        const updatedItems = socialTodos.map((item) => {
+          if(item.id === updatedItem.id){
+            return updatedItem;
+          }
+          return item;
+        })
+        set_social_todos(updatedItems)
+      }
+    
+      
+      function handleDeletedTask(id){
+        const updatedItems = socialTodos.filter(item => item.id !== id)
+        set_social_todos(updatedItems)
+        console.log(updatedItems)
+      }
+
     return (
         <div>
             <div className="Container">
@@ -27,8 +44,8 @@ function SocialLife({onUpdateTask, onDeleteTask}){
             </div>
             <ul className="Items">{socialTodos.map(item => <Tasks 
             key={item.id}
-            onUpdateTask={onUpdateTask}
-            onDeleteTask={onDeleteTask}
+            onUpdateTask={handleUpdateTask}
+            onDeleteTask={handleDeletedTask}
             item={item}/>)}
             </ul>
         </div>
