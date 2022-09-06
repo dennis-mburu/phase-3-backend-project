@@ -1,0 +1,52 @@
+{
+  "todos": [
+    {
+      "task": "Drink 8 glasses of Water",
+      "category": "daily",
+      "isDone": false,
+      "id": 1
+    },
+    {
+      "task": "Read an informative article or book",
+      "category": "mind-care",
+      "isDone": false,
+      "id": 2
+    },
+    {
+      "task": "Morning Workout/stretch",
+      "category": "daily",
+      "isDone": false,
+      "id": 3
+    },
+    {
+      "task": "Learn a new Money Making Skill",
+      "category": "finances",
+      "isDone": false,
+      "id": 4
+    },
+    {
+      "task": "Take regular Breaks from work",
+      "category": "mind-care",
+      "isDone": false,
+      "id": 5
+    },
+    {
+      "task": "Plan a get-together with the Mburu's family in 2 weeks time",
+      "category": "people",
+      "isDone": false,
+      "id": 6
+    },
+    {
+      "task": "Invest 15k in CMMF by this end Month",
+      "category": "finances",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "task": "Call Jim tomorrow night",
+      "category": "people",
+      "isDone": false,
+      "id": 8
+    }
+  ]
+}
